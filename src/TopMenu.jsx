@@ -9,6 +9,13 @@ export default function TopMenu({ currentItem, setPage, setTestValue }) {
         setOpen(!open)
     }
 
+    const linkClicked = (event) => {
+        const link = event.target;
+        const id = link.id;
+
+        setPage(id);
+    }
+
     return (
         <div className="top-menu">
             {
@@ -42,6 +49,23 @@ export default function TopMenu({ currentItem, setPage, setTestValue }) {
                                 setPage={ setPage }
                                 setTestValue={ setTestValue }
                             />
+
+                            <a
+                                className={ 'link' + (currentItem === 'books' ? ' link--highlighted' : '') }
+                                href={ '#books' }
+                                onClick={ linkClicked }
+                                id="books"
+                            >
+                                Books
+                            </a>
+
+                            <a
+                                className={ 'link' + (currentItem === 'authors' ? ' link--highlighted' : '') }
+                                href={ '#authors' }
+                                onClick={ () => { setPage('authors') } }
+                            >
+                                Authors
+                            </a>
 
                         </nav>
                     )

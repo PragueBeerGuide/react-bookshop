@@ -16,6 +16,14 @@ export default function MainContent({ page }) {
         content = (
             <h2>Contact Us!</h2>
         )
+    } else if (page === 'books') {
+        content = (
+            <h2>Books index</h2>
+        )
+    } else if (page === 'authors') {
+        content = (
+            <h2>Authors index</h2>
+        )
     } else {
         content = (
             <h2>404: Page not found</h2>
