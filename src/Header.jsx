@@ -1,9 +1,10 @@
+import { useState } from 'react';
 import './Header.scss'
 import TopMenu from './TopMenu'
 
-export default function Header() {
+export default function Header({ page, setPage }) {
 
-    const fooValue = '123';
+    const [testValue, setTestValue] = useState(null);
 
     return (
         <header className="header">
@@ -11,8 +12,14 @@ export default function Header() {
                 Black Books
             </div>
 
+            <div>
+                Last menu item clicked: { testValue }
+            </div>
+
             <TopMenu
-                currentItem={ 'about' }
+                currentItem={ page }
+                setPage={ setPage }
+                setTestValue={ setTestValue }
             />
         </header>
     )

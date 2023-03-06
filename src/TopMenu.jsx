@@ -1,7 +1,7 @@
 import { useState } from "react"
 import TopMenuLink from "./TopMenuLink"
 
-export default function TopMenu({ currentItem }) {
+export default function TopMenu({ currentItem, setPage, setTestValue }) {
 
     const [open, setOpen] = useState(false)
 
@@ -23,18 +23,24 @@ export default function TopMenu({ currentItem }) {
                                 url=""
                                 label="Home"
                                 currentItem={ currentItem }
+                                setPage={ setPage }
+                                setTestValue={ setTestValue }
                             />
 
                             <TopMenuLink
                                 url="about"
                                 label="About us"
                                 currentItem={ currentItem }
+                                setPage={ setPage }
+                                setTestValue={ setTestValue }
                             />
 
                             <TopMenuLink
                                 url="contact"
                                 label="Contact"
                                 currentItem={ currentItem }
+                                setPage={ setPage }
+                                setTestValue={ setTestValue }
                             />
 
                         </nav>

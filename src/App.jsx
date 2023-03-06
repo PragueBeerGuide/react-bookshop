@@ -6,13 +6,19 @@ import Footer from './Footer';
 import MainContent from './MainContent';
 
 function App() {
-    const [count, setCount] = useState(0)
+    const [count, setCount] = useState(0);
+    const [page, setPage] = useState(''); // empty '' means homepage
 
     return (
         <div className="app">
-            <Header />
+            <Header
+                page={ page }
+                setPage={ setPage }
+            />
 
-            <MainContent />
+            <MainContent
+                page={ page }
+            />
 
             <Footer />
         </div>
