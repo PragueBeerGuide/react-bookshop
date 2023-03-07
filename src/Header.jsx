@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './Header.scss'
+import CurrencySelection from './CurrencySelection';
 import TopMenu from './TopMenu'
 
 export default function Header({ page, setPage }) {
@@ -12,9 +13,11 @@ export default function Header({ page, setPage }) {
                 Black Books
             </div>
 
-            <div>
+            {/* <div>
                 Last menu item clicked: { testValue }
-            </div>
+            </div> */}
+
+            <CurrencySelection />
 
             <TopMenu
                 currentItem={ page }
